@@ -1,0 +1,23 @@
+#map {
+    width: 100vw;
+    height: 100vh;
+}
+
+.overlay-div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Asegura que el div superpuesto esté por encima del mapa */
+    pointer-events: none; /* Permite que los eventos pasen al mapa subyacente */
+}
+
+/* Ajusta la apariencia del contenido superpuesto según tus necesidades */
+.overlay-div-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Estilos adicionales según tus preferencias */
+}

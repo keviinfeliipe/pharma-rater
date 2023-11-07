@@ -1,0 +1,18 @@
+.small-image {
+    max-width: 150px; 
+    max-height: 150px; 
+}
+
+.image-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    max-width: 100px; /* Ancho máximo del contenedor de la imagen */
+    max-height: 100px; /* Altura máxima del contenedor de la imagen */
+}
+
+.container{
+    display: flex;
+    width: 35vw;
+    height: 35vh;
+}
