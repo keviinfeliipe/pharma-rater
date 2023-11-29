@@ -1,20 +1,50 @@
-<div class="map-container">
-    <div id="map" #map>
-    
-    </div>
-    <div class="overlay-div">
-        <div class="container">
-            <div class="card text-center">
-                <div class="card-header">
-                    <b>Buscar producto</b>
-                </div>
-                <div class="card-body p-4">
-                    <input id="userName" class="form-control m-2" type="text" placeholder="Ingrese el producto" name="email"
-                        #userName required />
-                        <input type="range" class="form-range px-2" min="1" max="18" #zoomInput> 
-                    <button style="width: 100%;" class="btn btn-primary btn-lg btn-block m-2">Buscar</button>
-                </div>
-            </div>
+<div class="general-container">
+  <div id="map" #map>
+  </div>
+  <div class="overlay-div">
+    <div class="search-container">
+      <div class="row height d-flex justify-content-center align-items-center">
+        <div class="col-md-8">
+          <div class="search">
+            <i class="fa fa-search"></i>
+            <input type="text" class="form-control" placeholder="Que producto estas buscando?" #productInput>
+            <button class="btn btn-primary" (click)="searchProducts(productInput.value)">Search</button>
+          </div>
         </div>
+      </div>
     </div>
+    <br>
+    <div class="products-container">
+      <div class="row">
+        <div *ngFor="let product of products" class="product-container col-6">
+          <div class="card mb-3 shadow-sm p-3 mb-5 bg-body rounded">
+            <div class="row g-0">
+              <div class="card-header">
+                <h5 class="">{{ product.name }}</h5>
+              </div>
+              <div class="col-md-4">
+                <img [src]="product.image" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <p class="card-text">Precio: {{ product.price | number:'2.2-2' }}</p>
+                  <p class="card-text">Direccion: {{ product.address }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="floating-range p-2">
+    <div class="floating-content">
+      <input type="range" class="form-range px-2" min="500" max="10000" step="200" [value]="km"
+        (input)="zoomChanged( kmInput.value )" #kmInput>
+      <button (click)="searchProducts(productInput.value)" class="btn btn-primary bi bi-check"> </button>
+    </div>
+    <span class="form-label">
+      Metros: {{ km }}
+    </span>
+  </div>
 </div>

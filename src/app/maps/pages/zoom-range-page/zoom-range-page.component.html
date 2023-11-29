@@ -5,8 +5,8 @@
         <button (click)="zoomOut()" class="btn btn-primary"> - </button>
         <input type="range"
             class="form-range px-2"
-            min="-2"
-            max="18"
+            min="2"
+            max="100"
             [value]="zoom"
             (input)="zoomChanged( zoomInput.value)"
             #zoomInput

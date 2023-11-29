@@ -1,23 +1,98 @@
+.general-container {
+    margin: 10px;
+    overflow-x: hidden;
+}
+
 #map {
-    width: 100vw;
-    height: 100vh;
+    width: 40vw;
+    height: 98vh;
+    float: left;
+    border-radius: 30px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1)
+}
+
+.floating-range {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 999;
+    width: 500px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1)
+}
+
+.floating-content {
+    display: flex;
+    align-items: center;
 }
 
 .overlay-div {
-    position: absolute;
+    float: right;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2; /* Asegura que el div superpuesto esté por encima del mapa */
-    pointer-events: none; /* Permite que los eventos pasen al mapa subyacente */
+    width: 55vw;
+    height: 90vh;
 }
 
-/* Ajusta la apariencia del contenido superpuesto según tus necesidades */
-.overlay-div-content {
+.products-container{
+    max-height: 45vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.product-container {
+    max-height: 240px;
+}
+
+.card-header{
+    height: 70px;
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.search {
+    position: relative;
+    box-shadow: 0 0 40px rgba(51, 51, 51, .1);
+}
+
+.search input {
+    height: 60px;
+    text-indent: 25px;
+    border: 2px solid #d6d4d4;
+    border-radius: 10px;
+}
+
+
+.search input:focus {
+    box-shadow: none;
+    border: 2px solid blue;
+}
+
+.search .fa-search {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* Estilos adicionales según tus preferencias */
+    top: 20px;
+    left: 16px;
+}
+
+.search button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 50px;
+    width: 110px;
+    background: blue;
 }
